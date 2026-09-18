@@ -170,7 +170,9 @@
   }
   @media (max-width:640px){ .nav-inner{padding:16px 18px;} }
   .brand{display:flex;align-items:center;gap:10px;}
-  .brand img{height:44px;width:auto;flex-shrink:0;}
+  .brand img{height:100px;width:auto;flex-shrink:0;transition:height var(--dur-m) var(--ease);}
+  .nav.scrolled .brand img{height:44px;}
+  @media (prefers-reduced-motion: reduce){ .brand img{transition:none;} }
   .primary-nav{display:flex;align-items:center;gap:4px;flex-wrap:wrap;}
   .nav-item{position:relative;}
   .primary-nav a, .primary-nav .menu{
@@ -224,35 +226,33 @@
   /* ---------- FOREIGN EXCHANGE ---------- */
   /* container-width card, pulled up on a negative margin so it overlaps the
      hero banner above it instead of sitting in its own full-bleed strip. */
-  .fx-section{position:relative;z-index:2;padding:0;margin-top:-80px;}
-  .fx-card{background:var(--navy);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:14px 20px;}
-  .fx-head{margin-bottom:8px;}
+  .fx-section{position:relative;z-index:2;padding:0;margin-top:-40px;}
+  .fx-card{background:var(--navy);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:24px 26px;}
+  .fx-head{margin-bottom:18px;}
   .fx-eyebrow{font-size:12px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:#fff;}
-  .fx-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
-  .fx-item{border:1px solid rgba(255,255,255,.16);border-radius:9px;padding:8px 12px;background:rgba(255,255,255,.04);
+  .fx-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+  .fx-item{border:1px solid rgba(255,255,255,.16);border-radius:9px;padding:12px 16px;background:rgba(255,255,255,.04);
+    display:flex;align-items:center;justify-content:space-between;gap:14px;
     transition:background-color var(--dur-s) var(--ease), border-color var(--dur-s) var(--ease), transform var(--dur-s) var(--ease);}
   .fx-item:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.3);transform:translateY(-2px);}
   @media (prefers-reduced-motion: reduce){ .fx-item{transition:none;} .fx-item:hover{transform:none;} }
-  .fx-item-top{display:flex;align-items:center;gap:7px;margin-bottom:6px;}
-  .fx-cur{display:flex;align-items:center;gap:7px;}
-  .fx-icon{width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.15);color:#fff;
-    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:11px;flex-shrink:0;}
+  .fx-cur{display:flex;align-items:center;gap:10px;flex-shrink:0;}
+  .fx-icon{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.15);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;flex-shrink:0;}
   .fx-name{display:flex;flex-direction:column;line-height:1.2;}
   .fx-name b{font-size:12.5px;color:#fff;font-weight:800;}
   .fx-name small{font-size:10px;color:rgba(255,255,255,.6);font-weight:500;}
-  .fx-rates{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:20px;padding-top:6px;border-top:1px solid rgba(255,255,255,.15);}
-  .fx-rates::after{content:"";position:absolute;left:50%;top:0;bottom:-8px;width:1px;
-    background:rgba(255,255,255,.15);transform:translateX(-50%);}
+  .fx-rates{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:40px;padding-left:14px;border-left:1px solid rgba(255,255,255,.15);}
   .fx-label{display:block;font-size:10px;color:rgba(255,255,255,.6);margin-bottom:1px;}
   .fx-value{display:block;font-size:15px;font-weight:800;color:#fff;letter-spacing:-.2px;}
   @media (max-width:900px){
-    .fx-section{margin-top:-48px;}
-    .fx-card{padding:14px 16px;}
+    .fx-section{margin-top:-24px;}
+    .fx-card{padding:18px 16px;}
     .fx-row{grid-template-columns:1fr;}
   }
 
   /* ---------- HERO ---------- */
-  .hero{position:relative;overflow:hidden;isolation:isolate;background:var(--bg);}
+  .hero{position:relative;overflow:hidden;isolation:isolate;background:var(--bg);border-bottom:1px solid var(--line);}
   .hero__grad{position:absolute;inset:0;z-index:0;
     background:linear-gradient(160deg, var(--bg) 0%, var(--bg) 62%, var(--motif-tint) 100%);}
   .hero__motif{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;
@@ -264,7 +264,7 @@
       rgba(var(--scrim-rgb),.96) 0%, rgba(var(--scrim-rgb),.82) 42%,
       rgba(var(--scrim-rgb),.36) 66%, rgba(var(--scrim-rgb),0) 84%);}
   .hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr 1fr;gap:40px;
-    align-items:center;padding:96px 32px 64px;max-width:1280px;margin:0 auto;perspective:1200px;}
+    align-items:center;padding:96px 32px 140px;max-width:1280px;margin:0 auto;perspective:1200px;}
 
   /* lattice pattern: a star-and-cross net that draws itself in, then drifts almost imperceptibly */
   .ln{stroke-dasharray:1;stroke-dashoffset:1;will-change:stroke-dashoffset;}
@@ -360,7 +360,7 @@
   .pcard.c2 .pcard__media{background:linear-gradient(155deg,#0d5a3f,#053824);}
   .pcard.c3 .pcard__media{background:linear-gradient(155deg,#4a2e7d,#241443);}
   .pcard__scrim{position:absolute;inset:0;z-index:1;pointer-events:none;
-    background:linear-gradient(to top, rgba(0,0,0,.82) 0%, rgba(0,0,0,.42) 46%, rgba(0,0,0,0) 74%);}
+    background:linear-gradient(to top, rgba(0,0,0,.96) 0%, rgba(0,0,0,.78) 42%, rgba(0,0,0,.22) 75%, rgba(0,0,0,0) 95%);}
   .pcard:hover .pcard__media, .pcard:focus-within .pcard__media{transform:scale(1.07);}
   .pcard__content{position:relative;z-index:2;padding:26px;color:#fff;}
   .pcard__eyebrow{display:block;font-size:12px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;
@@ -422,7 +422,7 @@
   .card-visual{border-radius:18px;height:340px;background:linear-gradient(150deg,#1b1b1b,#33322f);
     display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
   .card-visual__scrim{position:absolute;inset:0;z-index:1;pointer-events:none;
-    background:linear-gradient(to top, rgba(0,0,0,.85) 0%, rgba(0,0,0,.4) 48%, rgba(0,0,0,0) 74%);}
+    background:linear-gradient(to top, rgba(0,0,0,.96) 0%, rgba(0,0,0,.78) 44%, rgba(0,0,0,.22) 75%, rgba(0,0,0,0) 95%);}
   .card-visual__desc{position:absolute;left:0;right:0;bottom:0;z-index:2;margin:0;
     padding:22px 24px;color:#fff;font-size:15px;line-height:1.6;}
   /* ---------- QUICK ACCESS ---------- */
@@ -449,7 +449,7 @@
     transition:opacity var(--dur-m) var(--ease);}
   @media (prefers-reduced-motion: reduce){ .qa-visual img{transition:none;} }
   .qa-visual-scrim{position:absolute;inset:0;z-index:1;pointer-events:none;
-    background:linear-gradient(to bottom, rgba(0,0,0,.6) 0%, rgba(0,0,0,0) 24%, rgba(0,0,0,0) 54%, rgba(0,0,0,.86) 100%);}
+    background:linear-gradient(to bottom, rgba(0,0,0,.62) 0%, rgba(0,0,0,.14) 20%, rgba(0,0,0,.32) 38%, rgba(0,0,0,.95) 62%, rgba(0,0,0,.97) 100%);}
   .qa-panels{position:relative;z-index:2;height:100%;padding:32px;}
   .qa-panel{display:none;flex-direction:column;justify-content:flex-end;height:100%;}
   .qa-panel.active{display:flex;}
@@ -468,10 +468,11 @@
      its own opaque contrast — the overlay underneath is what keeps it
      readable regardless of what part of the photo sits behind any given
      letter. */
-  .stats-section{position:relative;padding:64px 0;
-    background-image:linear-gradient(160deg, rgba(1,32,70,.8), rgba(0,56,35,.8)),
-      url('img/section-img_b1475276b6744ccd8c2530005870944b.avif');
-    background-size:cover;background-position:center;background-repeat:no-repeat;}
+  .stats-section{position:relative;overflow:hidden;isolation:isolate;padding:64px 0;background:#012046;}
+  .stats-section__video{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;}
+  .stats-section__scrim{position:absolute;inset:0;z-index:0;pointer-events:none;
+    background:linear-gradient(160deg, rgba(1,32,70,.8), rgba(0,56,35,.8));}
+  .stats-section > .wrap{position:relative;z-index:1;}
   /* One unified block, cells sharing hairline dividers instead of gapped
      separate cards — same layout as before, now in glass instead of solid
      white. Two explicit rows — 3 cells then 4 — rather than one grid with a
@@ -589,12 +590,12 @@
   .fbrand img{height:68px;width:auto;margin-bottom:10px;}
   .fbrand p{font-size:15px;color:var(--footer-link);line-height:1.55;margin:0;}
   .flast{display:flex;flex-direction:column;align-items:flex-end;gap:16px;}
-  .socials{display:flex;gap:10px;}
-  .socials a{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.1);display:flex;
-    align-items:center;justify-content:center;transition:background-color var(--dur-s) var(--ease), transform var(--dur-s) var(--ease);}
-  .socials a:hover{background:var(--green);transform:translateY(-2px);}
-  .socials a svg{width:15px;height:15px;}
-  .fstores{display:flex;flex-direction:column;gap:8px;align-items:flex-end;}
+  .socials{display:flex;align-items:center;gap:18px;}
+  .socials a{width:24px;height:24px;display:flex;align-items:center;justify-content:center;opacity:.85;
+    transition:opacity var(--dur-s) var(--ease), transform var(--dur-s) var(--ease);}
+  .socials a:hover{opacity:1;transform:translateY(-2px);}
+  .socials a svg{width:22px;height:22px;}
+  .fstores{display:flex;flex-direction:column;gap:8px;align-items:flex-end;align-self:flex-end;}
   .fstores .store-badge{width:132px;height:40px;object-fit:fill;transition:transform var(--dur-s) var(--ease);}
   .fstores a:hover .store-badge{transform:scale(1.05);}
   @media (prefers-reduced-motion: reduce){ .socials a{transition:none;} .socials a:hover{transform:none;} .fstores .store-badge{transition:none;} .fstores a:hover .store-badge{transform:none;} }
@@ -706,6 +707,7 @@
         <a href="#">English</a>
         <a href="#">دری (Dari)</a>
         <a href="#">پښتو (Pashto)</a>
+        <a href="#">Oʻzbekcha (Uzbek)</a>
       </div>
     </div>
     <a class="acct" href="#">
@@ -782,11 +784,9 @@
       </div>
       <div class="fx-row">
         <div class="fx-item">
-          <div class="fx-item-top">
-            <div class="fx-cur">
-              <span class="fx-icon" aria-hidden="true">$</span>
-              <span class="fx-name"><b>USD</b><small>US Dollar</small></span>
-            </div>
+          <div class="fx-cur">
+            <span class="fx-icon" aria-hidden="true">$</span>
+            <span class="fx-name"><b>USD</b><small>US Dollar</small></span>
           </div>
           <div class="fx-rates">
             <div><span class="fx-label">Buy</span><span class="fx-value">50.00</span></div>
@@ -794,11 +794,9 @@
           </div>
         </div>
         <div class="fx-item">
-          <div class="fx-item-top">
-            <div class="fx-cur">
-              <span class="fx-icon" aria-hidden="true">€</span>
-              <span class="fx-name"><b>EUR</b><small>Euro</small></span>
-            </div>
+          <div class="fx-cur">
+            <span class="fx-icon" aria-hidden="true">€</span>
+            <span class="fx-name"><b>EUR</b><small>Euro</small></span>
           </div>
           <div class="fx-rates">
             <div><span class="fx-label">Buy</span><span class="fx-value">76.80</span></div>
@@ -806,11 +804,9 @@
           </div>
         </div>
         <div class="fx-item">
-          <div class="fx-item-top">
-            <div class="fx-cur">
-              <span class="fx-icon" aria-hidden="true">£</span>
-              <span class="fx-name"><b>GBP</b><small>British Pound</small></span>
-            </div>
+          <div class="fx-cur">
+            <span class="fx-icon" aria-hidden="true">£</span>
+            <span class="fx-name"><b>GBP</b><small>British Pound</small></span>
           </div>
           <div class="fx-rates">
             <div><span class="fx-label">Buy</span><span class="fx-value">89.50</span></div>
@@ -1002,6 +998,8 @@
 
 <!-- STATS -->
 <section class="stats-section">
+  <video class="stats-section__video" src="img/Banner1.mp4" poster="img/section-img_b1475276b6744ccd8c2530005870944b.avif" autoplay muted loop playsinline aria-hidden="true"></video>
+  <div class="stats-section__scrim" aria-hidden="true"></div>
   <div class="wrap">
     <div class="stats-grid">
       <div class="stats-row stats-row--head">
@@ -1505,6 +1503,15 @@
       });
     }, {threshold: 0.6});
     nums.forEach(function(el){ io.observe(el); });
+  })();
+
+  (function(){
+    var bgVideo = document.querySelector('.stats-section__video');
+    if (!bgVideo) return;
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches){
+      bgVideo.removeAttribute('autoplay');
+      bgVideo.pause();
+    }
   })();
 
   /* Drives a 0..1 progress value from scroll position while `trigger`'s
