@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/lucide@1.47.0/dist/umd/lucide.min.js" defer></script>
 <style>
   :root{
     --navy:#014493;
@@ -219,7 +220,7 @@
   .nav-right{display:flex;align-items:center;gap:14px;}
   .lang{display:flex;align-items:center;gap:4px;font-size:14px;color:var(--body-text);padding:6px 10px;
     border-radius:8px;min-height:44px;}
-  .lang svg{width:16px;height:16px;flex-shrink:0;}
+  .lang svg:not(.chev){width:16px;height:16px;flex-shrink:0;}
   .acct{display:flex;align-items:center;gap:6px;padding:6px 10px;border-radius:8px;
     color:var(--body-text);font-size:14px;font-weight:500;min-height:44px;
     transition:color var(--dur-s) var(--ease), background-color var(--dur-s) var(--ease);}
@@ -612,7 +613,7 @@
   .fcol ul a:hover{color:#fff;transform:translateX(3px);}
   .fcol ul a svg{width:11px;height:11px;opacity:.7;}
   @media (prefers-reduced-motion: reduce){ .fcol ul a{transition:none;} .fcol ul a:hover{transform:none;} }
-  .fbrand img{height:68px;width:auto;margin-bottom:10px;}
+  .fbrand img{height:65px;width:auto;margin-bottom:10px;}
   .fbrand p{font-size:15px;color:var(--footer-link);line-height:1.55;margin:0;}
   .flast{display:flex;flex-direction:column;align-items:flex-end;gap:16px;}
   .socials{display:flex;align-items:center;gap:18px;}
@@ -693,13 +694,13 @@
     <div class="primary-nav">
       <a href="#">Home</a>
       <div class="nav-item">
-        <button class="menu" type="button" aria-haspopup="true" aria-expanded="false">Banking <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+        <button class="menu" type="button" aria-haspopup="true" aria-expanded="false">Banking <i data-lucide="chevron-down" class="chev"></i></button>
         <div class="dropdown megamenu" hidden>
           <div class="megamenu-wrap wrap">
             <div class="megamenu-cols">
               <div class="megamenu-col">
                 <div class="megamenu-col-head">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                  <i data-lucide="bell"></i>
                   <h4>Personal Banking</h4>
                 </div>
                 <div class="megamenu-col-list">
@@ -710,7 +711,7 @@
               </div>
               <div class="megamenu-col">
                 <div class="megamenu-col-head">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                  <i data-lucide="briefcase"></i>
                   <h4>Corporate Banking</h4>
                 </div>
                 <div class="megamenu-col-list">
@@ -721,7 +722,7 @@
               </div>
               <div class="megamenu-col">
                 <div class="megamenu-col-head">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+                  <i data-lucide="menu"></i>
                   <h4>Digital Banking</h4>
                 </div>
                 <div class="megamenu-col-list">
@@ -735,40 +736,40 @@
         </div>
       </div>
       <div class="nav-item">
-        <button class="menu" type="button" aria-haspopup="true" aria-expanded="false">About Us <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+        <button class="menu" type="button" aria-haspopup="true" aria-expanded="false">About Us <i data-lucide="chevron-down" class="chev"></i></button>
         <div class="dropdown megamenu" hidden>
           <div class="megamenu-wrap wrap">
             <div class="megamenu-cards">
               <a class="megamenu-card" href="#">
-                <span class="megamenu-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/></svg></span>
+                <span class="megamenu-card-icon"><i data-lucide="shield-check"></i></span>
                 <span class="megamenu-card-text"><strong>Board of Supervisory</strong><small>Leadership Oversight</small></span>
               </a>
               <a class="megamenu-card" href="#">
-                <span class="megamenu-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+                <span class="megamenu-card-icon"><i data-lucide="users"></i></span>
                 <span class="megamenu-card-text"><strong>Shareholders</strong><small>Meet our Shareholders</small></span>
               </a>
               <a class="megamenu-card" href="#">
-                <span class="megamenu-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="1"/><path d="M9 22v-4h6v4M9 6h.01M9 10h.01M9 14h.01M15 6h.01M15 10h.01M15 14h.01"/></svg></span>
+                <span class="megamenu-card-icon"><i data-lucide="building-2"></i></span>
                 <span class="megamenu-card-text"><strong>Board of Management</strong><small>Executive team</small></span>
               </a>
               <a class="megamenu-card" href="#">
-                <span class="megamenu-card-icon">%</span>
+                <span class="megamenu-card-icon"><i data-lucide="percent"></i></span>
                 <span class="megamenu-card-text"><strong>Shariah Board</strong><small>Ensuring compliance</small></span>
               </a>
               <a class="megamenu-card" href="#">
-                <span class="megamenu-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6l-8-4z"/></svg></span>
+                <span class="megamenu-card-icon"><i data-lucide="shield"></i></span>
                 <span class="megamenu-card-text"><strong>CIA, CRO &amp; Chief Compliance</strong><small>Risk Management</small></span>
               </a>
               <a class="megamenu-card" href="#">
-                <span class="megamenu-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg></span>
+                <span class="megamenu-card-icon"><i data-lucide="file-text"></i></span>
                 <span class="megamenu-card-text"><strong>Financial Reports</strong><small>Financial Reports</small></span>
               </a>
               <a class="megamenu-card" href="#">
-                <span class="megamenu-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l18-5v12L3 14v-3z"/><path d="M7 14v4a2 2 0 0 0 2 2h1v-6"/></svg></span>
+                <span class="megamenu-card-icon"><i data-lucide="megaphone"></i></span>
                 <span class="megamenu-card-text"><strong>News And Update</strong><small>Latest announcements</small></span>
               </a>
               <a class="megamenu-card" href="#">
-                <span class="megamenu-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg></span>
+                <span class="megamenu-card-icon"><i data-lucide="graduation-cap"></i></span>
                 <span class="megamenu-card-text"><strong>Careers</strong><small>Join our team</small></span>
               </a>
             </div>
@@ -776,20 +777,20 @@
         </div>
       </div>
       <div class="nav-item">
-        <button class="menu" type="button" aria-haspopup="true" aria-expanded="false">Resources &amp; Governance <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+        <button class="menu" type="button" aria-haspopup="true" aria-expanded="false">Resources &amp; Governance <i data-lucide="chevron-down" class="chev"></i></button>
         <div class="dropdown megamenu" hidden>
           <div class="megamenu-wrap wrap">
             <div class="megamenu-cards">
               <a class="megamenu-card" href="#">
-                <span class="megamenu-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M18 9l-5 5-4-4-3 3"/></svg></span>
+                <span class="megamenu-card-icon"><i data-lucide="line-chart"></i></span>
                 <span class="megamenu-card-text"><strong>Investor Relations</strong><small>Financial performance &amp; updates</small></span>
               </a>
               <a class="megamenu-card" href="#">
-                <span class="megamenu-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg></span>
+                <span class="megamenu-card-icon"><i data-lucide="download"></i></span>
                 <span class="megamenu-card-text"><strong>Download Forms</strong><small>Account &amp; service forms</small></span>
               </a>
               <a class="megamenu-card" href="#">
-                <span class="megamenu-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M7 21h10"/><path d="M5 7h5l-2.5 5.5a2.5 2.5 0 0 1-5 0L5 7z"/><path d="M14 7h5l-2.5 5.5a2.5 2.5 0 0 1-5 0L14 7z"/></svg></span>
+                <span class="megamenu-card-icon"><i data-lucide="scale"></i></span>
                 <span class="megamenu-card-text"><strong>Governance &amp; Compliance</strong><small>Policies &amp; oversight</small></span>
               </a>
             </div>
@@ -801,9 +802,9 @@
   <div class="nav-right">
     <div class="nav-item">
       <button class="lang" type="button" aria-haspopup="true" aria-expanded="false">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.5 5.7 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.7-3.5-9s1-6.5 3.5-9z"/></svg>
+        <i data-lucide="globe"></i>
         EN
-        <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        <i data-lucide="chevron-down" class="chev"></i>
       </button>
       <div class="dropdown" hidden>
         <a href="#">English</a>
@@ -813,12 +814,12 @@
       </div>
     </div>
     <a class="acct" href="#">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <i data-lucide="user" width="16" height="16"></i>
       Login
     </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
-      <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-      <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      <i data-lucide="menu" class="icon-open"></i>
+      <i data-lucide="x" class="icon-close"></i>
     </button>
   </div>
  </div>
@@ -827,19 +828,19 @@
 <!-- MOBILE NAV -->
 <div class="mobile-nav" id="mobile-nav" hidden>
   <a href="#">Home</a>
-  <button class="m-menu-btn" type="button" aria-expanded="false">Banking <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+  <button class="m-menu-btn" type="button" aria-expanded="false">Banking <i data-lucide="chevron-down" class="chev"></i></button>
   <div class="m-submenu" hidden>
     <a href="#">Personal Islamic Banking</a>
     <a href="#">Islamic Corporate Banking</a>
     <a href="#">Digital Banking</a>
   </div>
-  <button class="m-menu-btn" type="button" aria-expanded="false">About Us <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+  <button class="m-menu-btn" type="button" aria-expanded="false">About Us <i data-lucide="chevron-down" class="chev"></i></button>
   <div class="m-submenu" hidden>
     <a href="#">Our Story</a>
     <a href="#">Leadership</a>
     <a href="#">Careers</a>
   </div>
-  <button class="m-menu-btn" type="button" aria-expanded="false">Resources &amp; Governance <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+  <button class="m-menu-btn" type="button" aria-expanded="false">Resources &amp; Governance <i data-lucide="chevron-down" class="chev"></i></button>
   <div class="m-submenu" hidden>
     <a href="#">Investor Relations</a>
     <a href="#">Download Forms</a>
@@ -957,7 +958,7 @@
       </div>
     </div>
     <a class="btn-primary" href="#">Explore All Shariah-Compliant Services
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      <i data-lucide="arrow-right" width="15" height="15" stroke="#fff"></i>
     </a>
   </div>
 </section>
@@ -981,12 +982,12 @@
         <div>
           <h3>Global Access With Shariah-Compliant Master Debit Cards</h3>
           <div class="check-list">
-            <div class="item"><span class="bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span> Contactless, Shariah-compliant payment technology</div>
-            <div class="item"><span class="bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span> Access 100+ Nationwide &amp; 1,000+ International ATMs</div>
-            <div class="item"><span class="bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span> Minimum annual fees · Zero Riba · Full Shariah compliance</div>
+            <div class="item"><span class="bullet"><i data-lucide="check" stroke-width="3"></i></span> Contactless, Shariah-compliant payment technology</div>
+            <div class="item"><span class="bullet"><i data-lucide="check" stroke-width="3"></i></span> Access 100+ Nationwide &amp; 1,000+ International ATMs</div>
+            <div class="item"><span class="bullet"><i data-lucide="check" stroke-width="3"></i></span> Minimum annual fees · Zero Riba · Full Shariah compliance</div>
           </div>
           <a class="btn-outline" href="#">Apply for Your Shariah-Compliant Debit Card
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            <i data-lucide="arrow-right" width="14" height="14"></i>
           </a>
         </div>
         <div class="card-visual" style="background-image:url('img/Shariah-Compliant%20EMV%20Debit%20Cards.png');background-size:cover;background-position:center;">
@@ -999,12 +1000,12 @@
         <div>
           <h3>Bank Securely From Anywhere With Islamic Internet Banking</h3>
           <div class="check-list">
-            <div class="item"><span class="bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span> Real-time balance &amp; transaction tracking</div>
-            <div class="item"><span class="bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span> Free transfers between Ghazanfar Bank accounts</div>
-            <div class="item"><span class="bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span> Bank-grade encryption &amp; two-factor authentication</div>
+            <div class="item"><span class="bullet"><i data-lucide="check" stroke-width="3"></i></span> Real-time balance &amp; transaction tracking</div>
+            <div class="item"><span class="bullet"><i data-lucide="check" stroke-width="3"></i></span> Free transfers between Ghazanfar Bank accounts</div>
+            <div class="item"><span class="bullet"><i data-lucide="check" stroke-width="3"></i></span> Bank-grade encryption &amp; two-factor authentication</div>
           </div>
           <a class="btn-outline" href="#">Log In to Internet Banking
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            <i data-lucide="arrow-right" width="14" height="14"></i>
           </a>
         </div>
         <div class="card-visual" style="background-image:url('img/Islamic%20Internet%20Banking.png');background-size:cover;background-position:center;">
@@ -1017,12 +1018,12 @@
         <div>
           <h3>Keep Valuables Safe With Shariah-Compliant Deposit Lockers</h3>
           <div class="check-list">
-            <div class="item"><span class="bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span> Dual-key access with 24/7 branch security</div>
-            <div class="item"><span class="bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span> Multiple locker sizes to fit your needs</div>
-            <div class="item"><span class="bullet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M5 13l4 4L19 7"/></svg></span> Transparent, Shariah-compliant rental terms</div>
+            <div class="item"><span class="bullet"><i data-lucide="check" stroke-width="3"></i></span> Dual-key access with 24/7 branch security</div>
+            <div class="item"><span class="bullet"><i data-lucide="check" stroke-width="3"></i></span> Multiple locker sizes to fit your needs</div>
+            <div class="item"><span class="bullet"><i data-lucide="check" stroke-width="3"></i></span> Transparent, Shariah-compliant rental terms</div>
           </div>
           <a class="btn-outline" href="#">Reserve a Locker
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            <i data-lucide="arrow-right" width="14" height="14"></i>
           </a>
         </div>
         <div class="card-visual" style="background-image:url('img/Safe%20Deposit%20Locker.png');background-size:cover;background-position:center;">
@@ -1044,16 +1045,16 @@
     <div class="qa-layout" data-reveal style="--reveal-delay:100ms;">
       <div class="qa-list" id="qaList">
         <button class="qa-row" type="button" data-qa="login">Islamic Online Banking Login
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          <i data-lucide="arrow-right"></i>
         </button>
         <button class="qa-row" type="button" data-qa="wu">Western Union
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          <i data-lucide="arrow-right"></i>
         </button>
         <button class="qa-row" type="button" data-qa="bg">Bank Guarantee
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          <i data-lucide="arrow-right"></i>
         </button>
         <button class="qa-row active" type="button" data-qa="atm">ATM Debit Cards
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          <i data-lucide="arrow-right"></i>
         </button>
       </div>
       <div class="qa-visual">
@@ -1064,7 +1065,7 @@
         <div class="qa-panel-foot">
           <p>Access your Shariah-compliant accounts securely from anywhere — anytime, on any device.</p>
           <a class="btn-primary" href="#">Login Now
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            <i data-lucide="arrow-right" width="15" height="15" stroke="#fff"></i>
           </a>
         </div>
       </div>
@@ -1072,7 +1073,7 @@
         <div class="qa-panel-foot">
           <p>Send and receive international money transfers through our Shariah-compliant partner network.</p>
           <a class="btn-primary" href="#">Send Money
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            <i data-lucide="arrow-right" width="15" height="15" stroke="#fff"></i>
           </a>
         </div>
       </div>
@@ -1080,7 +1081,7 @@
         <div class="qa-panel-foot">
           <p>Secure trade and contract guarantees, structured to remain fully Shariah-compliant.</p>
           <a class="btn-primary" href="#">Request a Guarantee
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            <i data-lucide="arrow-right" width="15" height="15" stroke="#fff"></i>
           </a>
         </div>
       </div>
@@ -1088,7 +1089,7 @@
         <div class="qa-panel-foot">
           <p>Order or manage your Shariah-compliant ATM debit card in a few taps.</p>
           <a class="btn-primary" href="#">Manage Cards
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            <i data-lucide="arrow-right" width="15" height="15" stroke="#fff"></i>
           </a>
         </div>
       </div>
@@ -1107,29 +1108,29 @@
       <div class="stats-row stats-row--head">
         <div class="stat-headline" data-reveal><h2>17 Years of Trusted, Shariah-Compliant Banking</h2></div>
         <div class="stat-box" data-reveal style="--reveal-delay:50ms;">
-          <div class="icon" style="background:rgba(255,255,255,.18);"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 3v3M16 3v3"/></svg></div>
+          <div class="icon" style="background:rgba(255,255,255,.18);"><i data-lucide="landmark" stroke="#fff"></i></div>
           <div class="num" data-count="17">17</div><div class="lbl">Branches</div>
         </div>
         <div class="stat-box" data-reveal style="--reveal-delay:100ms;">
-          <div class="icon" style="background:rgba(255,255,255,.18);"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><path d="M9 12h6M9 16h6M9 8h6M5 3h14v18H5z"/></svg></div>
+          <div class="icon" style="background:rgba(255,255,255,.18);"><i data-lucide="users" stroke="#fff"></i></div>
           <div class="num" data-count="93176">93,176</div><div class="lbl">Customers</div>
         </div>
       </div>
       <div class="stats-row stats-row--figures">
         <div class="stat-box" data-reveal style="--reveal-delay:150ms;">
-          <div class="icon" style="background:rgba(255,255,255,.18);"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/></svg></div>
+          <div class="icon" style="background:rgba(255,255,255,.18);"><i data-lucide="credit-card" stroke="#fff"></i></div>
           <div class="num" data-count="28">28</div><div class="lbl">ATM</div>
         </div>
         <div class="stat-box" data-reveal style="--reveal-delay:200ms;">
-          <div class="icon" style="background:rgba(255,255,255,.18);"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M2 21a7 7 0 0 1 14 0"/><circle cx="17" cy="9" r="2.5"/><path d="M22 21a5.5 5.5 0 0 0-6-5.5"/></svg></div>
+          <div class="icon" style="background:rgba(255,255,255,.18);"><i data-lucide="id-card" stroke="#fff"></i></div>
           <div class="num" data-count="530">530</div><div class="lbl">Employees</div>
         </div>
         <div class="stat-box" data-reveal style="--reveal-delay:250ms;">
-          <div class="icon" style="background:rgba(255,255,255,.18);"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+          <div class="icon" style="background:rgba(255,255,255,.18);"><i data-lucide="map" stroke="#fff"></i></div>
           <div class="num" data-count="8">8</div><div class="lbl">Province Coverage</div>
         </div>
         <div class="stat-box" data-reveal style="--reveal-delay:300ms;">
-          <div class="icon" style="background:rgba(255,255,255,.18);"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"/></svg></div>
+          <div class="icon" style="background:rgba(255,255,255,.18);"><i data-lucide="award" stroke="#fff"></i></div>
           <div class="num" data-count="17">17</div><div class="lbl">Years Of Service</div>
         </div>
       </div>
@@ -1182,7 +1183,7 @@
       <label class="sr-only" for="newsletter-email">Email address</label>
       <input id="newsletter-email" name="email" type="email" autocomplete="email" required placeholder="Enter your email">
       <button type="submit">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+        <i data-lucide="send" width="14" height="14" stroke="#fff"></i>
         Subscribe
       </button>
     </form>
@@ -1190,9 +1191,9 @@
   <div class="footer-links-wrap">
     <div class="footer-divider" aria-hidden="true"></div>
     <div class="footer-links-bar">
-      <a class="flink" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="10" rx="1"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg> Online Banking Login</a>
-      <a class="flink" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><path d="M12 21s7-6.5 7-11a7 7 0 1 0-14 0c0 4.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> Branch &amp; ATM Locator</a>
-      <a class="flink" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><path d="M12 3v12M12 15l7-7M5 21h14"/></svg> Download Forms</a>
+      <a class="flink" href="#"><i data-lucide="lock" stroke="#fff"></i> Online Banking Login</a>
+      <a class="flink" href="#"><i data-lucide="map-pin" stroke="#fff"></i> Branch &amp; ATM Locator</a>
+      <a class="flink" href="#"><i data-lucide="download" stroke="#fff"></i> Download Forms</a>
     </div>
   </div>
   <div class="footer-main">
@@ -1203,29 +1204,29 @@
     <div class="fcol">
       <h4>Useful Links</h4>
       <ul>
-        <li><a href="#">▸ News And Update</a></li>
-        <li><a href="#">▸ Careers</a></li>
-        <li><a href="#">▸ Contact Us</a></li>
-        <li><a href="#">▸ About Us</a></li>
-        <li><a href="#">▸ Sitemap</a></li>
+        <li><a href="#"><i data-lucide="chevron-right"></i> News And Update</a></li>
+        <li><a href="#"><i data-lucide="chevron-right"></i> Careers</a></li>
+        <li><a href="#"><i data-lucide="chevron-right"></i> Contact Us</a></li>
+        <li><a href="#"><i data-lucide="chevron-right"></i> About Us</a></li>
+        <li><a href="#"><i data-lucide="chevron-right"></i> Sitemap</a></li>
       </ul>
     </div>
     <div class="fcol">
       <h4>Account Link</h4>
       <ul>
-        <li><a href="#">▸ Personal Banking</a></li>
-        <li><a href="#">▸ Digital Banking</a></li>
-        <li><a href="#">▸ Cards</a></li>
-        <li><a href="#">▸ Download Forms</a></li>
+        <li><a href="#"><i data-lucide="chevron-right"></i> Personal Banking</a></li>
+        <li><a href="#"><i data-lucide="chevron-right"></i> Digital Banking</a></li>
+        <li><a href="#"><i data-lucide="chevron-right"></i> Cards</a></li>
+        <li><a href="#"><i data-lucide="chevron-right"></i> Download Forms</a></li>
       </ul>
     </div>
     <div class="fcol">
       <h4>Legal &amp; Policies</h4>
       <ul>
-        <li><a href="#">▸ Privacy Policy</a></li>
-        <li><a href="#">▸ Security Notice</a></li>
-        <li><a href="#">▸ Terms &amp; Conditions</a></li>
-        <li><a href="#">▸ Download Forms</a></li>
+        <li><a href="#"><i data-lucide="chevron-right"></i> Privacy Policy</a></li>
+        <li><a href="#"><i data-lucide="chevron-right"></i> Security Notice</a></li>
+        <li><a href="#"><i data-lucide="chevron-right"></i> Terms &amp; Conditions</a></li>
+        <li><a href="#"><i data-lucide="chevron-right"></i> Download Forms</a></li>
       </ul>
     </div>
     <div class="fcol flast">
@@ -1248,18 +1249,21 @@
 <div class="fab" id="fab">
   <div class="fab-stack">
     <a class="fab-item" href="tel:+93000000000" aria-label="Call Ghazanfar Bank">
-      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <i data-lucide="phone" stroke="#fff"></i>
     </a>
     <a class="fab-item" href="#" aria-label="Message Ghazanfar Bank">
-      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+      <i data-lucide="message-circle" stroke="#fff"></i>
     </a>
     <button class="fab-toggle" id="fabToggle" type="button" aria-expanded="false" aria-controls="fabItems" aria-label="Contact options">
-      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg>
+      <i data-lucide="more-horizontal" fill="currentColor"></i>
     </button>
   </div>
 </div>
 
 <script>
+  document.addEventListener('DOMContentLoaded', function(){
+    if(window.lucide) lucide.createIcons();
+  });
   function wireTabs(tabSelector, panelSelector, triggerKey, panelKey){
     var tabs = Array.from(document.querySelectorAll(tabSelector));
     var reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
