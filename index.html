@@ -22,6 +22,7 @@
     --bg:#ffffff;
     --card-bg:#ffffff;
     --page-bg:#ffffff;
+    --nav-glass-bg:rgba(255,255,255,.62);
     --footer-bg:#003e84;
     --footer-link:#d1d5dc;
     --motif-tint:#eef3fa;
@@ -42,6 +43,7 @@
       --bg:#0b1220;
       --page-bg:#0b1220;
       --card-bg:#111a2c;
+      --nav-glass-bg:rgba(11,18,32,.55);
       --ink:#f1f5f9;
       --body-text:#c3cbd6;
       --muted:#94a3b8;
@@ -157,9 +159,9 @@
     opacity:1;transition:opacity var(--dur-m) var(--ease);
   }
   .nav.scrolled{
-    background:var(--bg);
-    backdrop-filter:blur(10px) saturate(1.4);
-    -webkit-backdrop-filter:blur(10px) saturate(1.4);
+    background:var(--nav-glass-bg);
+    backdrop-filter:blur(16px) saturate(1.6);
+    -webkit-backdrop-filter:blur(16px) saturate(1.6);
     border-bottom-color:var(--line);
     box-shadow:0 4px 20px -8px rgba(16,24,40,.12);
   }
@@ -411,7 +413,7 @@
   .features-panel__bg{position:absolute;top:var(--bg-inset-y,0px);bottom:var(--bg-inset-y,0px);left:50%;
     width:var(--bg-width, 100%);transform:translateX(-50%);
     z-index:-1;pointer-events:none;
-    background:#E5F4EB;border-radius:var(--bg-radius,32px);
+    background:#F2FAF5;border-radius:var(--bg-radius,32px);
     will-change:width,top,bottom,border-radius;}
   .features-panel > :not(.features-panel__bg):not(.tabs){padding:0px;}
   /* single pill-shaped bar, bordered, white/off-white — only the active tab
