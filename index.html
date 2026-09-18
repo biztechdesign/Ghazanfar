@@ -290,7 +290,7 @@
       rgba(var(--scrim-rgb),.96) 0%, rgba(var(--scrim-rgb),.82) 42%,
       rgba(var(--scrim-rgb),.36) 66%, rgba(var(--scrim-rgb),0) 84%);}
   .hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr 1fr;gap:40px;
-    align-items:center;padding:96px 32px 140px;max-width:1280px;margin:0 auto;perspective:1200px;}
+    align-items:center;padding:170px 32px 140px;max-width:1280px;margin:0 auto;perspective:1200px;}
 
   /* lattice pattern: a star-and-cross net that draws itself in, then drifts almost imperceptibly */
   .ln{stroke-dasharray:1;stroke-dashoffset:1;will-change:stroke-dashoffset;}
@@ -411,7 +411,7 @@
   .features-panel__bg{position:absolute;top:var(--bg-inset-y,0px);bottom:var(--bg-inset-y,0px);left:50%;
     width:var(--bg-width, 100%);transform:translateX(-50%);
     z-index:-1;pointer-events:none;
-    background:rgba(1,68,147,.06);border-radius:var(--bg-radius,32px);
+    background:#E5F4EB;border-radius:var(--bg-radius,32px);
     will-change:width,top,bottom,border-radius;}
   .features-panel > :not(.features-panel__bg):not(.tabs){padding:0px;}
   /* single pill-shaped bar, bordered, white/off-white — only the active tab
@@ -428,7 +428,7 @@
     white-space:nowrap;transition:background-color var(--dur-m) var(--ease), color var(--dur-m) var(--ease), box-shadow var(--dur-m) var(--ease);}
   .tab:not(:last-child)::after{content:"";position:absolute;right:-3.5px;top:50%;transform:translateY(-50%);
     width:1px;height:16px;background:var(--line);}
-  .tab.active{background:var(--navy);color:#fff;}
+  .tab.active{background:#009136;color:#fff;}
   .tab:hover:not(.active){color:var(--navy);}
   @media (prefers-reduced-motion: reduce){ .tab{transition:none;} }
   .tab-body{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;}
@@ -448,7 +448,7 @@
   .card-visual{border-radius:18px;height:340px;background:linear-gradient(150deg,#1b1b1b,#33322f);
     display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
   .card-visual__scrim{position:absolute;inset:0;z-index:1;pointer-events:none;
-    background:linear-gradient(to top, rgba(0,0,0,.96) 0%, rgba(0,0,0,.78) 44%, rgba(0,0,0,.22) 75%, rgba(0,0,0,0) 95%);}
+    background:linear-gradient(to top, rgba(0,0,0,.96) 0%, rgba(0,0,0,.78) 42%, rgba(0,0,0,.22) 75%, rgba(0,0,0,0) 95%);}
   .card-visual__desc{position:absolute;left:0;right:0;bottom:0;z-index:2;margin:0;
     padding:22px 24px;color:#fff;font-size:15px;line-height:1.6;}
   /* ---------- QUICK ACCESS ---------- */
@@ -475,15 +475,17 @@
     transition:opacity var(--dur-m) var(--ease);}
   @media (prefers-reduced-motion: reduce){ .qa-visual img{transition:none;} }
   .qa-visual-scrim{position:absolute;inset:0;z-index:1;pointer-events:none;
-    background:linear-gradient(to bottom, rgba(0,0,0,.62) 0%, rgba(0,0,0,.14) 20%, rgba(0,0,0,.32) 38%, rgba(0,0,0,.95) 62%, rgba(0,0,0,.97) 100%);}
+    background:linear-gradient(to top, rgba(0,0,0,.96) 0%, rgba(0,0,0,.78) 42%, rgba(0,0,0,.22) 75%, rgba(0,0,0,0) 95%);}
   .qa-panels{position:relative;z-index:2;height:100%;padding:32px;}
   .qa-panel{display:none;flex-direction:column;justify-content:flex-end;height:100%;}
   .qa-panel.active{display:flex;}
   .qa-panel.active .qa-panel-foot{animation:qaFadeIn var(--dur-l) var(--ease);}
   @keyframes qaFadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
   @media (prefers-reduced-motion: reduce){ .qa-panel.active .qa-panel-foot{animation:none;} }
-  .qa-panel-foot p{font-size:15px;color:rgba(255,255,255,.82);line-height:1.6;margin:0 0 24px;}
-  .qa-panel .btn-primary{width:fit-content;}
+  .qa-panel-foot{display:grid;grid-template-columns:60% 40%;align-items:center;gap:20px;}
+  .qa-panel-foot p{font-size:15px;color:rgba(255,255,255,.82);line-height:1.6;margin:0;}
+  .qa-panel .btn-primary{width:fit-content;justify-self:end;}
+  @media (max-width:640px){ .qa-panel-foot{grid-template-columns:1fr;} .qa-panel .btn-primary{justify-self:start;} .qa-panel-foot p{margin:0 0 16px;} }
   @media (max-width:1024px){ .qa-layout{grid-template-columns:1fr;} .qa-visual{order:-1;min-height:300px;} }
 
   /* ---------- STATS ---------- */
