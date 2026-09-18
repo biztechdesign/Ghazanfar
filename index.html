@@ -34,6 +34,7 @@
     --dur-s:.35s;
     --dur-m:.6s;
     --dur-l:.7s;
+    --nav-h:132px;
   }
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
@@ -191,6 +192,30 @@
     border-radius:8px;font-size:14.5px;color:var(--body-text);
     transition:background-color var(--dur-xs) var(--ease), color var(--dur-xs) var(--ease);}
   .dropdown a:hover{background:rgba(1,68,147,.06);color:var(--navy);}
+  .megamenu{position:fixed;top:var(--nav-h,132px);left:0;right:0;width:100%;min-width:0;
+    background:var(--card-bg);border:none;border-top:1px solid var(--line);
+    border-radius:0 0 20px 20px;box-shadow:0 24px 48px -16px rgba(16,24,40,.18);
+    padding:0;display:block;}
+  .megamenu-wrap{padding:24px 32px;}
+  .megamenu-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .megamenu-col-head{display:flex;align-items:center;gap:10px;padding-bottom:10px;
+    margin-bottom:10px;border-bottom:1px solid var(--line);}
+  .megamenu-col-head svg{width:20px;height:20px;color:var(--navy);flex-shrink:0;}
+  .megamenu-col-head h4{margin:0;font-size:16px;font-weight:700;color:var(--navy);}
+  .megamenu-col-list{display:flex;flex-direction:column;gap:0;}
+  .megamenu-col-list a{display:block;padding:6px 4px;border-radius:8px;font-size:14.5px;
+    color:var(--body-text);transition:color var(--dur-xs) var(--ease), background-color var(--dur-xs) var(--ease);}
+  .megamenu-col-list a:hover{color:var(--navy);background:rgba(1,68,147,.05);}
+  .megamenu-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px 40px;}
+  .megamenu-card{display:flex;align-items:center;gap:14px;padding:4px;border-radius:12px;
+    transition:background-color var(--dur-xs) var(--ease);}
+  .megamenu-card:hover{background:rgba(1,68,147,.05);}
+  .megamenu-card-icon{width:48px;height:48px;border-radius:12px;background:rgba(1,68,147,.08);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--navy);
+    font-size:17px;font-weight:700;}
+  .megamenu-card-icon svg{width:22px;height:22px;}
+  .megamenu-card-text strong{display:block;font-size:16px;font-weight:700;color:var(--navy);margin-bottom:2px;}
+  .megamenu-card-text small{display:block;font-size:13px;font-weight:400;color:var(--body-text);}
   .nav-right{display:flex;align-items:center;gap:14px;}
   .lang{display:flex;align-items:center;gap:4px;font-size:14px;color:var(--body-text);padding:6px 10px;
     border-radius:8px;min-height:44px;}
@@ -669,26 +694,106 @@
       <a href="#">Home</a>
       <div class="nav-item">
         <button class="menu" type="button" aria-haspopup="true" aria-expanded="false">Banking <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
-        <div class="dropdown" hidden>
-          <a href="#">Personal Islamic Banking</a>
-          <a href="#">Islamic Corporate Banking</a>
-          <a href="#">Digital Banking</a>
+        <div class="dropdown megamenu" hidden>
+          <div class="megamenu-wrap wrap">
+            <div class="megamenu-cols">
+              <div class="megamenu-col">
+                <div class="megamenu-col-head">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                  <h4>Personal Banking</h4>
+                </div>
+                <div class="megamenu-col-list">
+                  <a href="#">Accounts</a>
+                  <a href="#">Financing</a>
+                  <a href="#">Services</a>
+                </div>
+              </div>
+              <div class="megamenu-col">
+                <div class="megamenu-col-head">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                  <h4>Corporate Banking</h4>
+                </div>
+                <div class="megamenu-col-list">
+                  <a href="#">Accounts</a>
+                  <a href="#">Financing</a>
+                  <a href="#">Services</a>
+                </div>
+              </div>
+              <div class="megamenu-col">
+                <div class="megamenu-col-head">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+                  <h4>Digital Banking</h4>
+                </div>
+                <div class="megamenu-col-list">
+                  <a href="#">Internet Banking</a>
+                  <a href="#">ATM And Branch</a>
+                  <a href="#">Cards</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="nav-item">
         <button class="menu" type="button" aria-haspopup="true" aria-expanded="false">About Us <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
-        <div class="dropdown" hidden>
-          <a href="#">Our Story</a>
-          <a href="#">Leadership</a>
-          <a href="#">Careers</a>
+        <div class="dropdown megamenu" hidden>
+          <div class="megamenu-wrap wrap">
+            <div class="megamenu-cards">
+              <a class="megamenu-card" href="#">
+                <span class="megamenu-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/></svg></span>
+                <span class="megamenu-card-text"><strong>Board of Supervisory</strong><small>Leadership Oversight</small></span>
+              </a>
+              <a class="megamenu-card" href="#">
+                <span class="megamenu-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+                <span class="megamenu-card-text"><strong>Shareholders</strong><small>Meet our Shareholders</small></span>
+              </a>
+              <a class="megamenu-card" href="#">
+                <span class="megamenu-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="1"/><path d="M9 22v-4h6v4M9 6h.01M9 10h.01M9 14h.01M15 6h.01M15 10h.01M15 14h.01"/></svg></span>
+                <span class="megamenu-card-text"><strong>Board of Management</strong><small>Executive team</small></span>
+              </a>
+              <a class="megamenu-card" href="#">
+                <span class="megamenu-card-icon">%</span>
+                <span class="megamenu-card-text"><strong>Shariah Board</strong><small>Ensuring compliance</small></span>
+              </a>
+              <a class="megamenu-card" href="#">
+                <span class="megamenu-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6l-8-4z"/></svg></span>
+                <span class="megamenu-card-text"><strong>CIA, CRO &amp; Chief Compliance</strong><small>Risk Management</small></span>
+              </a>
+              <a class="megamenu-card" href="#">
+                <span class="megamenu-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg></span>
+                <span class="megamenu-card-text"><strong>Financial Reports</strong><small>Financial Reports</small></span>
+              </a>
+              <a class="megamenu-card" href="#">
+                <span class="megamenu-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l18-5v12L3 14v-3z"/><path d="M7 14v4a2 2 0 0 0 2 2h1v-6"/></svg></span>
+                <span class="megamenu-card-text"><strong>News And Update</strong><small>Latest announcements</small></span>
+              </a>
+              <a class="megamenu-card" href="#">
+                <span class="megamenu-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg></span>
+                <span class="megamenu-card-text"><strong>Careers</strong><small>Join our team</small></span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
       <div class="nav-item">
         <button class="menu" type="button" aria-haspopup="true" aria-expanded="false">Resources &amp; Governance <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
-        <div class="dropdown" hidden>
-          <a href="#">Shariah Board</a>
-          <a href="#">Annual Reports</a>
-          <a href="#">Download Forms</a>
+        <div class="dropdown megamenu" hidden>
+          <div class="megamenu-wrap wrap">
+            <div class="megamenu-cards">
+              <a class="megamenu-card" href="#">
+                <span class="megamenu-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M18 9l-5 5-4-4-3 3"/></svg></span>
+                <span class="megamenu-card-text"><strong>Investor Relations</strong><small>Financial performance &amp; updates</small></span>
+              </a>
+              <a class="megamenu-card" href="#">
+                <span class="megamenu-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg></span>
+                <span class="megamenu-card-text"><strong>Download Forms</strong><small>Account &amp; service forms</small></span>
+              </a>
+              <a class="megamenu-card" href="#">
+                <span class="megamenu-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M7 21h10"/><path d="M5 7h5l-2.5 5.5a2.5 2.5 0 0 1-5 0L5 7z"/><path d="M14 7h5l-2.5 5.5a2.5 2.5 0 0 1-5 0L14 7z"/></svg></span>
+                <span class="megamenu-card-text"><strong>Governance &amp; Compliance</strong><small>Policies &amp; oversight</small></span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -736,9 +841,9 @@
   </div>
   <button class="m-menu-btn" type="button" aria-expanded="false">Resources &amp; Governance <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
   <div class="m-submenu" hidden>
-    <a href="#">Shariah Board</a>
-    <a href="#">Annual Reports</a>
+    <a href="#">Investor Relations</a>
     <a href="#">Download Forms</a>
+    <a href="#">Governance &amp; Compliance</a>
   </div>
   <div class="m-lang-login">
     <a class="acct" href="#">EN</a>
@@ -1229,11 +1334,18 @@
   });
 
   var navEl = document.querySelector('.nav');
+  var setNavHeight = function(){
+    document.documentElement.style.setProperty('--nav-h', navEl.getBoundingClientRect().height + 'px');
+  };
   var setNavScrolled = function(){
     navEl.classList.toggle('scrolled', window.scrollY > 8);
+    setNavHeight();
   };
   setNavScrolled();
   window.addEventListener('scroll', setNavScrolled, {passive:true});
+  window.addEventListener('resize', setNavHeight);
+  var navBrandImg = document.querySelector('.brand img');
+  if(navBrandImg) navBrandImg.addEventListener('transitionend', setNavHeight);
 
   var navToggle = document.querySelector('.nav-toggle');
   var mobileNav = document.getElementById('mobile-nav');
